@@ -9,9 +9,7 @@ export default function HeroSection() {
     const containerRef = useRef<HTMLDivElement>(null);
     const { x, y } = useMousePosition(containerRef as React.RefObject<HTMLDivElement>);
     return (
-        <section
-            ref={containerRef as React.RefObject<HTMLDivElement>}
-            className='relative min-h-screen flex items-center justify-center overflow-hidden'>
+        <section ref={containerRef as React.RefObject<HTMLDivElement>} className='relative min-h-screen flex items-center justify-center overflow-hidden'>
 
             <div
                 className="pointer-events-none absolute inset-0 transition-opacity duration-500"
