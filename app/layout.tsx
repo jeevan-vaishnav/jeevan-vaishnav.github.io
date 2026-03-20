@@ -4,6 +4,7 @@ import "./globals.css";
 import NavigationBar from "@/components/header/navigation-bar";
 import ScrollProgress from "@/components/ScrollProgress";
 import Footer from "@/components/footer/footer";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,12 +38,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
-        <ScrollProgress />
-        <NavigationBar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ScrollProgress />
+          <NavigationBar />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html >
   );
