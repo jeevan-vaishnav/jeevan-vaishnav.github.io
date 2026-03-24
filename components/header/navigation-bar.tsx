@@ -1,18 +1,19 @@
 'use client'
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Github, Menu, X } from "lucide-react";
 import PageContainer from "../ui/page-container";
 import { Button } from "../ui/button";
 import { ThemeToggle } from "../theme-toggle";
+import Link from "next/link";
 
 const navLinks = [
     { label: "About", href: "#about" },
     { label: "Skills", href: "#skills" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
-    { label: "Blog", href: "#blog" },
-    { label: "Contact", href: "#contact" },
+    // { label: "Blog", href: "#blog" },
+    // { label: "Contact", href: "#contact" },
 ];
 export default function NavigationBar() {
     const [open, setOpen] = useState(false);
@@ -23,6 +24,8 @@ export default function NavigationBar() {
                     <a href="#" className="font-mono text-lg font-semibold text-foreground">
                         JV<span className="text-primary">.</span>
                     </a>
+                </div>
+                <div>
                     <nav className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
                             <a
@@ -36,6 +39,9 @@ export default function NavigationBar() {
                     </nav>
                 </div>
                 <div className="flex items-center gap-2">
+                    <Link href="https://github.com/jeevan-vaishnav" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                        <Github size={18} strokeWidth={1.5} />
+                    </Link>
                     <ThemeToggle />
                     <Button
                         variant="ghost"
