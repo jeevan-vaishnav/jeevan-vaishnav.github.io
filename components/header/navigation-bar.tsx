@@ -69,14 +69,14 @@ export default function NavigationBar() {
                     >
                         <PageContainer className="py-4 flex flex-col gap-3">
                             {navLinks.map((link) => (
-                                <a
+                                <Link
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setOpen(false)}
                                     className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                                 >
                                     {link.label}
-                                </a>
+                                </Link>
                             ))}
                         </PageContainer>
                     </motion.div>
